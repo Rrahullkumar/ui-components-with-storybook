@@ -125,26 +125,6 @@ text
 
 - **🎨 Storybook Documentation**:https://ui-components-with-storybook.vercel.app/?path=/story/components-datatable--default
 
-## 📁 Project Structure
-
-src/
-├── components/
-│ ├── InputField/
-│ │ ├── InputField.tsx
-│ │ └── InputField.stories.tsx
-│ └── DataTable/
-│ ├── DataTable.tsx
-│ ├── DataTable.stories.tsx
-│ └── DataTable.mdx
-├── App.tsx
-└── index.css
-
-.storybook/
-├── main.ts
-└── preview.ts
-
-text
-
 ## 🎨 Features Showcase
 
 ### InputField Features
@@ -156,6 +136,9 @@ text
 - ✅ Responsive sizing
 - ✅ Dark mode support
 
+- <img width="1891" height="919" alt="image" src="https://github.com/user-attachments/assets/12fdf7c9-57cf-4277-82e8-642dbee3d0e8" />
+
+
 ### DataTable Features
 - ✅ Column sorting with visual indicators
 - ✅ Row selection (single/multiple)
@@ -164,6 +147,9 @@ text
 - ✅ Custom cell rendering
 - ✅ Responsive horizontal scrolling
 - ✅ Keyboard accessibility
+
+- <img width="1880" height="891" alt="image" src="https://github.com/user-attachments/assets/5dd10f25-bb66-4122-a87c-97ef33718358" />
+
 
 ## 🚀 Deployment
 
