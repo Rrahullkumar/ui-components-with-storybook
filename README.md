@@ -1,69 +1,189 @@
-# React + TypeScript + Vite
+# 🚀 React UI Components Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible React component library built with TypeScript, Tailwind CSS, and Storybook.
 
-Currently, two official plugins are available:
+## ✨ Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔤 InputField
+A flexible input component with validation, multiple variants, and interactive features.
 
-## Expanding the ESLint configuration
+- **Variants**: Outlined, Filled, Ghost
+- **Sizes**: Small, Medium, Large  
+- **Features**: Validation, Loading states, Clear button, Password toggle
+- **Dark Mode**: Full theme support
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📊 DataTable
+A comprehensive data table with sorting, selection, and rich customization options.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Sorting**: Click headers to sort (asc → desc → none)
+- **Selection**: Multi-select with checkboxes
+- **States**: Loading skeleton, Empty state
+- **Custom Rendering**: Rich cell content
+- **Responsive**: Mobile-friendly scrolling
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React 18** + **TypeScript**
+- **Vite** for lightning-fast development
+- **Tailwind CSS** for styling
+- **Storybook** for component documentation
+- **Deployed on Vercel**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+Clone the repository
+git clone <your-repo-url>
+cd ui-components
+
+Install dependencies
+npm install
+
+Start development server
+npm run dev
+
+Start Storybook
+npm run storybook
+
+text
+
+## 📱 Development
+
+Development server (React app)
+npm run dev # http://localhost:5173
+
+Storybook (Component docs)
+npm run storybook # http://localhost:6006
+
+Build for production
+npm run build # React app → dist/
+npm run build-storybook # Storybook → storybook-static/
+
+text
+
+## 🎨 Usage
+
+### InputField Example
+import { InputField } from './components/InputField';
+
+<InputField
+label="Email Address"
+type="email"
+placeholder="Enter your email"
+variant="outlined"
+size="md"
+helperText="We'll never share your email"
+onChange={(e) => console.log(e.target.value)}
+/>
+
+text
+
+### DataTable Example
+import { DataTable } from './components/DataTable';
+
+const columns = [
+{ key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
+{ key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
+];
+
+<DataTable
+data={users}
+columns={columns}
+selectable={true}
+onRowSelect={(rows) => console.log('Selected:', rows)}
+/>
+
+text
+
+## 🎯 My Approach
+
+### Design Philosophy
+- **Accessibility First**: ARIA roles, keyboard navigation, screen reader support
+- **Developer Experience**: TypeScript, clear APIs, comprehensive documentation
+- **Flexibility**: Multiple variants, custom rendering, extensible design
+- **Performance**: Optimized rendering, minimal bundle size
+
+### Architecture Decisions
+- **Component Composition**: Each component is self-contained with clear interfaces
+- **TypeScript Generics**: DataTable uses generics for type-safe data handling
+- **Tailwind CSS**: Utility-first approach for consistent, maintainable styling
+- **Storybook Integration**: Living documentation with interactive examples
+
+### Development Workflow
+1. **Component Development**: Build components with React + TypeScript
+2. **Styling**: Use Tailwind for responsive, theme-aware designs
+3. **Documentation**: Create Storybook stories with interactive examples
+4. **Testing**: Manual testing via Storybook playground
+5. **Deployment**: Automated deployment to Vercel
+
+## 🌐 Live Demo
+
+- **🎨 Storybook Documentation**:https://ui-components-with-storybook.vercel.app/?path=/story/components-datatable--default
+
+## 📁 Project Structure
+
+src/
+├── components/
+│ ├── InputField/
+│ │ ├── InputField.tsx
+│ │ └── InputField.stories.tsx
+│ └── DataTable/
+│ ├── DataTable.tsx
+│ ├── DataTable.stories.tsx
+│ └── DataTable.mdx
+├── App.tsx
+└── index.css
+
+.storybook/
+├── main.ts
+└── preview.ts
+
+text
+
+## 🎨 Features Showcase
+
+### InputField Features
+- ✅ Multiple input types (text, email, password, number)
+- ✅ Validation states with error messages
+- ✅ Loading and disabled states
+- ✅ Clear button functionality
+- ✅ Password visibility toggle
+- ✅ Responsive sizing
+- ✅ Dark mode support
+
+### DataTable Features
+- ✅ Column sorting with visual indicators
+- ✅ Row selection (single/multiple)
+- ✅ Loading skeleton animation
+- ✅ Empty state with meaningful message
+- ✅ Custom cell rendering
+- ✅ Responsive horizontal scrolling
+- ✅ Keyboard accessibility
+
+## 🚀 Deployment
+
+Both components are deployed separately:
+- **Storybook**: Component documentation and playground
+
+Automated deployment pipeline using Vercel with GitHub integration.
+
+## 🎯 Next Steps
+
+- [ ] Add unit tests with Jest + React Testing Library
+- [ ] Implement additional components (Button, Modal, Form)
+- [ ] Add animation and micro-interactions
+- [ ] Create component templates/generators
+- [ ] Implement theming system
+
+## 🤝 Contributing
+
+Feel free to explore the components, suggest improvements, or use them in your projects!
+
+---
+
+**Built with ❤️ using React + TypeScript + Tailwind + Storybook**
