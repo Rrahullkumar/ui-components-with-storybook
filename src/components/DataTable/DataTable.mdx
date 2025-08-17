@@ -1,0 +1,89 @@
+import { Meta, Canvas, Story } from '@storybook/blocks';
+import * as DataTableStories from './DataTable.stories';
+
+<Meta of={DataTableStories} />
+
+# DataTable Component
+
+A comprehensive data table component with **sorting, selection, loading, and empty states**.
+
+---
+
+## ✨ Features
+
+- **Column Sorting** → Click headers to sort (asc → desc → none)  
+- **Row Selection** → Checkboxes for single/multiple selection  
+- **Loading State** → Skeleton animation while data loads  
+- **Empty State** → Friendly message when no data  
+- **Custom Rendering** → Rich column content with `render` functions  
+- **Responsive** → Horizontal scroll on mobile  
+- **Accessible** → Full ARIA support  
+- **Dark Mode** → Seamless theme support  
+
+---
+
+## 📦 Basic Usage
+
+```tsx
+import DataTable from './DataTable';
+
+const columns = [
+  { key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
+  { key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
+];
+
+<DataTable
+  data={users}
+  columns={columns}
+  selectable={true}
+  onRowSelect={(rows) => console.log(rows)}
+/>
+
+📊 Examples
+Default Table
+<Canvas of={DataTableStories.Default} />
+Loading State
+<Canvas of={DataTableStories.LoadingState} />
+Empty State
+<Canvas of={DataTableStories.EmptyState} />
+Custom Rendering
+<Canvas of={DataTableStories.CustomRendering} />
+
+⚙️ Props
+| Prop          | Type                  | Default | Description              |
+| ------------- | --------------------- | ------- | ------------------------ |
+| `data`        | `T[]`                 | `[]`    | Array of data to display |
+| `columns`     | `Column<T>[]`         | `[]`    | Column definitions       |
+| `loading`     | `boolean`             | `false` | Show loading skeleton    |
+| `selectable`  | `boolean`             | `false` | Enable row selection     |
+| `onRowSelect` | `(rows: T[]) => void` | -       | Selection callback       |
+
+📐 Column Definition
+interface Column<T> {
+  key: string; // Unique identifier
+  title: string; // Header text
+  dataIndex: keyof T; // Data property key
+  sortable?: boolean; // Enable sorting
+  render?: (value: any, record: T, index: number) => React.ReactNode; // Custom renderer
+}
+
+🎨 Custom Rendering Example
+const columns = [
+  {
+    key: 'status',
+    title: 'Status',
+    dataIndex: 'status',
+    render: (status) => (
+      <span className={status === 'active' ? 'text-green-600' : 'text-red-600'}>
+        {status}
+      </span>
+    ),
+  },
+];
+
+🧪 Interactive Playground
+<Canvas of={DataTableStories.InteractivePlayground} />
+
+Try changing the controls above to see how the table behaves with different configurations!
+
+

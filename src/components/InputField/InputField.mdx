@@ -1,0 +1,100 @@
+<!-- src/components/InputField/InputField.mdx -->
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import * as InputFieldStories from './InputField.stories';
+
+<Meta of={InputFieldStories} />
+
+# InputField Component
+
+A comprehensive, accessible input component built with React, TypeScript, and Tailwind CSS.
+
+## Overview
+
+The InputField component provides a consistent, flexible input solution with built-in validation, multiple visual variants, and extensive customization options.
+
+## Features
+
+### ✨ Core Features
+- **Multiple Variants**: Outlined, filled, and ghost styles
+- **Three Sizes**: Small, medium, and large
+- **Validation States**: Invalid, disabled, loading
+- **Interactive Elements**: Clear button, password toggle
+- **Accessibility**: Full ARIA support, keyboard navigation
+- **Dark Mode**: Complete theme support
+
+### 🎨 Visual States
+- Normal, focused, disabled, invalid, loading
+- Smooth transitions and hover effects
+- Responsive design
+
+### 🔧 Developer Experience
+- Full TypeScript support
+- Controlled and uncontrolled modes
+- Extensive prop customization
+- Clear API documentation
+
+## Basic Usage
+
+<Canvas of={InputFieldStories.Default} />
+
+## API Reference
+
+<ArgTypes of={InputFieldStories} />
+
+## Examples
+
+### Password Input
+<Canvas of={InputFieldStories.Password} />
+
+### Form Layout
+<Canvas of={InputFieldStories.FormExample} />
+
+### Size Comparison
+<Canvas of={InputFieldStories.AllSizes} />
+
+### Variant Comparison
+<Canvas of={InputFieldStories.AllVariants} />
+
+## Best Practices
+
+### Accessibility
+- Always provide meaningful labels
+- Use helperText for additional context
+- Provide clear error messages
+- Ensure sufficient color contrast
+
+### Performance
+- Use controlled components sparingly for large forms
+- Debounce validation for better UX
+- Consider lazy loading for complex forms
+
+### Design
+- Choose variants consistently across your app
+- Use appropriate sizes for context
+- Maintain consistent spacing
+
+## Props Documentation
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | - | Input label text |
+| `placeholder` | `string` | - | Placeholder text |
+| `helperText` | `string` | - | Additional help text |
+| `errorMessage` | `string` | - | Error message (overrides helperText) |
+| `variant` | `'outlined' \| 'filled' \| 'ghost'` | `'outlined'` | Visual style variant |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Input size |
+| `disabled` | `boolean` | `false` | Disable input |
+| `invalid` | `boolean` | `false` | Show invalid state |
+| `loading` | `boolean` | `false` | Show loading state |
+| `clearable` | `boolean` | `true` | Show clear button |
+| `type` | `string` | `'text'` | HTML input type |
+| `maxLength` | `number` | - | Maximum character limit |
+
+## Change Log
+
+### v1.0.0
+- Initial release with all core features
+- Full TypeScript support
+- Comprehensive Storybook documentation
+- Dark mode support
+- Accessibility compliance

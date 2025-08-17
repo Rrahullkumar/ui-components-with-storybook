@@ -1,0 +1,5 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* This is the missing piece for Tailwind v4 dark mode */
+@variant dark (.dark &);
